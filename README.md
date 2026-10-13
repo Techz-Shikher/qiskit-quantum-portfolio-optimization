@@ -24,29 +24,30 @@ The project focuses on reproducible experiments, quantitative evaluation, and tr
 
 Given an expected-return vector and a covariance matrix, select exactly \(K\) stocks from \(n\) available stocks.
 
+
 Each stock is represented by a binary decision variable:
 
 $$
 x_i \in \{0,1\}
 $$
 
-where \(x_i=1\) indicates that stock \(i\) is selected.
+where $x_i=1$ indicates that stock $i$ is selected.
+
 
 The optimization objective is:
 
 $$
-C(x) = q\,x^T\Sigma x - \mu^T x
-+ \lambda\left(\sum_{i=1}^{n}x_i-K\right)^2
+C(x) = q\,x^T\Sigma x - \mu^T x + \lambda\left(\sum_{i=1}^{n}x_i-K\right)^2
 $$
 
 Where:
 
-- \(x\): Binary portfolio-selection vector
-- \(\mu\): Expected-return vector
-- \(\Sigma\): Covariance matrix
-- \(q\): Risk-weight parameter
-- \(K\): Required number of selected stocks
-- \(\lambda\): Penalty parameter for violating the cardinality constraint
+- $x$: Binary portfolio-selection vector
+- $\mu$: Expected-return vector
+- $\Sigma$: Covariance matrix
+- $q$: Risk-weight parameter
+- $K$: Required number of selected stocks
+- $\lambda$: Penalty parameter for violating the cardinality constraint
 
 The objective is minimized. The covariance term represents portfolio risk, the return term rewards higher expected returns, and the penalty discourages portfolios that do not contain exactly \(K\) stocks.
 
