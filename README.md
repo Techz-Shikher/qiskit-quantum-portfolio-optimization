@@ -26,18 +26,18 @@ Given an expected-return vector and a covariance matrix, select exactly \(K\) st
 
 Each stock is represented by a binary decision variable:
 
-\[
+$$
 x_i \in \{0,1\}
-\]
+$$
 
 where \(x_i=1\) indicates that stock \(i\) is selected.
 
 The optimization objective is:
 
-\[
-C(x)=q\,x^T\Sigma x-\mu^Tx+
-\lambda\left(\sum_{i=1}^{n}x_i-K\right)^2
-\]
+$$
+C(x) = q\,x^T\Sigma x - \mu^T x
++ \lambda\left(\sum_{i=1}^{n}x_i-K\right)^2
+$$
 
 Where:
 
@@ -114,7 +114,7 @@ The classical brute-force optimum remains the reference solution; the approximat
 
 **Optimization limitation:** The \(p=2,3,4\) runs reached the configured maximum of 100 objective evaluations. Their reported parameters are not guaranteed to be globally optimal.
 
-### Depth-sweep visualization
+### Depth-sweep visualizations
 
 ![QAOA expected cost across depths](plots/qaoa_expected_cost.png)
 
@@ -147,9 +147,9 @@ A separate experiment considers selecting exactly six stocks from twelve.
 
 The number of feasible portfolios is:
 
-\[
+$$
 \binom{12}{6}=924
-\]
+$$
 
 All 924 feasible portfolios were enumerated.
 
@@ -216,8 +216,6 @@ These results indicate substantial sensitivity to initialization under the teste
 - The optimizer did not report successful convergence within the configured evaluation budget.
 
 ## 9. Visualizations and Results
-
-The experiment generates the following visualizations:
 
 | File | Purpose |
 |---|---|
